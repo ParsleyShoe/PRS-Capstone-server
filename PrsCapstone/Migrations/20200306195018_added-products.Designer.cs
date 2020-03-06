@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PrsCapstone.Models;
 
 namespace PrsCapstone.Migrations
 {
     [DbContext(typeof(PrsCapstoneContext))]
-    partial class PrsCapstoneContextModelSnapshot : ModelSnapshot
+    [Migration("20200306195018_added-products")]
+    partial class addedproducts
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -58,75 +60,6 @@ namespace PrsCapstone.Migrations
                     b.HasIndex("VendorId");
 
                     b.ToTable("Products");
-                });
-
-            modelBuilder.Entity("PrsCapstone.Models.Request", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("DeliveryMode")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(80)")
-                        .HasMaxLength(80);
-
-                    b.Property<string>("Justification")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(80)")
-                        .HasMaxLength(80);
-
-                    b.Property<string>("RejectionReason")
-                        .HasColumnType("nvarchar(80)")
-                        .HasMaxLength(80);
-
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(10)")
-                        .HasMaxLength(10);
-
-                    b.Property<decimal>("Total")
-                        .HasColumnType("decimal(11, 2)");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("Requests");
-                });
-
-            modelBuilder.Entity("PrsCapstone.Models.RequestLine", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
-
-                    b.Property<int>("RequestId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ProductId");
-
-                    b.HasIndex("RequestId");
-
-                    b.ToTable("RequestLines");
                 });
 
             modelBuilder.Entity("PrsCapstone.Models.User", b =>
@@ -236,30 +169,6 @@ namespace PrsCapstone.Migrations
                     b.HasOne("PrsCapstone.Models.Vendor", "Vendor")
                         .WithMany()
                         .HasForeignKey("VendorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("PrsCapstone.Models.Request", b =>
-                {
-                    b.HasOne("PrsCapstone.Models.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("PrsCapstone.Models.RequestLine", b =>
-                {
-                    b.HasOne("PrsCapstone.Models.Product", "Product")
-                        .WithMany()
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("PrsCapstone.Models.Request", "Request")
-                        .WithMany("RequestLines")
-                        .HasForeignKey("RequestId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

@@ -17,6 +17,11 @@ namespace PrsCapstone.Controllers {
             _context = context;
         }
 
+        [HttpGet("login/{username}/{password}")]
+        public async Task<ActionResult<User>> Login(string username, string password) {
+            return await _context.Users.SingleOrDefaultAsync(u => u.Username == username && u.Password == password);
+        }
+
         [HttpGet]
         public async Task<ActionResult<IEnumerable<User>>> GetUsers() {
             return await _context.Users.ToListAsync();
@@ -79,8 +84,5 @@ namespace PrsCapstone.Controllers {
             return _context.Users.Any(e => e.Id == id);
         }
 
-        public User Login(string username, string password) {
-            return _context.Users.SingleOrDefault(u => u.Username == username && u.Password == password);
-        }
     }
 }
