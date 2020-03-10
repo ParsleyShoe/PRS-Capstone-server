@@ -280,10 +280,12 @@ C:\repos\PrsCapstone\PrsCapstone\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcor
 C:\repos\PrsCapstone\PrsCapstone\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\repos\PrsCapstone\PrsCapstone\obj\Debug\netcoreapp3.1\staticwebassets\PrsCapstone.StaticWebAssets.Manifest.cache
 C:\repos\PrsCapstone\PrsCapstone\obj\Debug\netcoreapp3.1\staticwebassets\PrsCapstone.StaticWebAssets.xml
-C:\repos\PrsCapstone\PrsCapstone\obj\Debug\netcoreapp3.1\PrsCapstone.MvcApplicationPartsAssemblyInfo.cache
 C:\repos\PrsCapstone\PrsCapstone\obj\Debug\netcoreapp3.1\PrsCapstone.AssemblyInfoInputs.cache
 C:\repos\PrsCapstone\PrsCapstone\obj\Debug\netcoreapp3.1\PrsCapstone.AssemblyInfo.cs
 C:\repos\PrsCapstone\PrsCapstone\obj\Debug\netcoreapp3.1\PrsCapstone.RazorTargetAssemblyInfo.cache
 C:\repos\PrsCapstone\PrsCapstone\obj\Debug\netcoreapp3.1\PrsCapstone.csproj.CopyComplete
 C:\repos\PrsCapstone\PrsCapstone\obj\Debug\netcoreapp3.1\PrsCapstone.dll
 C:\repos\PrsCapstone\PrsCapstone\obj\Debug\netcoreapp3.1\PrsCapstone.pdb
+C:\repos\PrsCapstone\PrsCapstone\obj\Debug\netcoreapp3.1\PrsCapstone.csprojAssemblyReference.cache
+C:\repos\PrsCapstone\PrsCapstone\bin\Debug\netcoreapp3.1\DataAnnotationsExtensions.dll
+C:\repos\PrsCapstone\PrsCapstone\obj\Debug\netcoreapp3.1\PrsCapstone.MvcApplicationPartsAssemblyInfo.cache

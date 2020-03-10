@@ -22,6 +22,27 @@ namespace PrsCapstone.Controllers {
             return await _context.Users.SingleOrDefaultAsync(u => u.Username == username && u.Password == password);
         }
 
+        [HttpGet("recoverpassword_e/{username}/{email}")]
+        public async Task<bool> RecoverPasswordWithEmail(string username, string email) {
+            if (await _context.Users.SingleOrDefaultAsync(u => u.Username == username && u.Email == email) == null) {
+                return false;
+            }
+            return true;
+        }
+        [HttpGet("recoverpassword_p/{username}/{email}")]
+        public async Task<bool> RecoverPasswordWithPhone(string username, string phone) {
+            if (await _context.Users.SingleOrDefaultAsync(u => u.Username == username && u.Phone == phone) == null) {
+                return false;
+            }
+            return true;
+        }
+
+        [HttpGet("resetpassword/{password}")]
+        public async Task<IActionResult> ResetPassword(string password, User user) {
+            user.Password = password;
+            return await PutUser(user.Id, user);
+        }
+
         [HttpGet]
         public async Task<ActionResult<IEnumerable<User>>> GetUsers() {
             return await _context.Users.ToListAsync();

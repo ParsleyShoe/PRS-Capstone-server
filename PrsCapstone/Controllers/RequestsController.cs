@@ -50,7 +50,14 @@ namespace PrsCapstone.Controllers {
             return NoContent();
         }
 
-        // TODO still need Reject() method
+        [HttpPut("reject/{id}")]
+        public async Task<IActionResult> Reject(int id, Request request) {
+            request.Status = "REJECTED";
+            if (request.RejectionReason == null) {
+                throw new Exception("Rejection reason field must be filled out.");
+            }
+            return await PutRequest(id, request);
+        }
 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Request>>> GetRequests() {

@@ -24,8 +24,8 @@ namespace PrsCapstone.Models {
         public string Phone { get; set;}
         [StringLength(255)]
         public string Email { get; set;}
-        public bool IsReviewer { get; set; }
-        public bool IsAdmin { get; set; }
+        public bool IsReviewer { get; set; } = false;
+        public bool IsAdmin { get; set; } = false;
 
     }
 }
