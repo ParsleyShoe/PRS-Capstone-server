@@ -29,7 +29,7 @@ namespace PrsCapstone.Controllers {
             }
             return true;
         }
-        [HttpGet("recoverpassword_p/{username}/{email}")]
+        [HttpGet("recoverpassword_p/{username}/{phone}")]
         public async Task<bool> RecoverPasswordWithPhone(string username, string phone) {
             if (await _context.Users.SingleOrDefaultAsync(u => u.Username == username && u.Phone == phone) == null) {
                 return false;
@@ -82,6 +82,10 @@ namespace PrsCapstone.Controllers {
 
         [HttpPost]
         public async Task<ActionResult<User>> PostUser(User user) {
+            //if (!user.IsAdmin) {
+            //    return BadRequest();
+            //}
+            // might need to wait for front end to implement
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
 

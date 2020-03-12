@@ -29,8 +29,8 @@ namespace PrsCapstone.Controllers {
             _context = context;
         }
 
-        [HttpGet("reviewbyuser/{userid}")]
-        public async Task<ActionResult<IEnumerable<Request>>> GetRequestsToReview(int userid) {
+        [HttpGet("reviews/{userid}")]
+        public async Task<ActionResult<IEnumerable<Request>>> ReviewByUser(int userid) {
             return await _context.Requests.Where(r => r.Status == "REVIEW" && r.UserId != userid).ToListAsync();
         }
 
@@ -52,11 +52,15 @@ namespace PrsCapstone.Controllers {
 
         [HttpPut("reject/{id}")]
         public async Task<IActionResult> Reject(int id, Request request) {
-            request.Status = "REJECTED";
             if (request.RejectionReason == null) {
                 throw new Exception("Rejection reason field must be filled out.");
             }
+            //if (!await ChangeStatus(request, "REJECTED")) {
+            //    return NotFound();
+            //}
+            request.Status = "REJECTED";
             return await PutRequest(id, request);
+            //return NoContent();
         }
 
         [HttpGet]
