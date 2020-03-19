@@ -82,10 +82,6 @@ namespace PrsCapstone.Controllers {
 
         [HttpPost]
         public async Task<ActionResult<User>> PostUser(User user) {
-            //if (!user.IsAdmin) {
-            //    return BadRequest();
-            //}
-            // might need to wait for front end to implement
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
 

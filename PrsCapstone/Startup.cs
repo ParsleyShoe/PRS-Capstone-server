@@ -32,7 +32,7 @@ namespace PrsCapstone {
             });
             services.AddCors(option =>
                 option.AddPolicy(DefaultCorsPolicy, x =>
-                    x.WithOrigins(AllowOrigins).WithMethods(AllowMethods).AllowAnyHeader()
+                    x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()
                 )
             );
         }
@@ -44,6 +44,7 @@ namespace PrsCapstone {
             }
 
             app.UseRouting();
+            app.UseCors(DefaultCorsPolicy);
             app.UseAuthorization();
             app.UseEndpoints(endpoints => {
                 endpoints.MapControllers();
