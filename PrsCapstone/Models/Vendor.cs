@@ -8,7 +8,7 @@ namespace PrsCapstone.Models {
     public class Vendor {
 
         public int Id { get; set; }
-        [StringLength(30)]
+        [StringLength(16)]
         [Required]
         public string Code { get; set; }
         [StringLength(30)]
@@ -26,9 +26,9 @@ namespace PrsCapstone.Models {
         [StringLength(5)]
         [Required]
         public string ZIP { get; set; }
-        [StringLength(12)]
+        [StringLength(10)]
         public string Phone { get; set; }
-        [StringLength(255)]
+        [StringLength(100)]
         public string Email { get; set; }
 
     }

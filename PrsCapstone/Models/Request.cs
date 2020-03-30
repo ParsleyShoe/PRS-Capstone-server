@@ -18,7 +18,7 @@ namespace PrsCapstone.Models {
         public string RejectionReason { get; set; }
         [StringLength(20)]
         [Required]
-        public string DeliveryMode { get; set; } = "Pickup";
+        public string DeliveryMode { get; set; }
         [StringLength(10)]
         [Required]
         public string Status { get; set; } = "NEW";

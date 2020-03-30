@@ -8,7 +8,7 @@ namespace PrsCapstone.Models {
     public class Product {
 
         public int Id { get; set; }
-        [StringLength(30)]
+        [StringLength(16)]
         [Required]
         public string PartNumber { get; set; }
         [StringLength(30)]

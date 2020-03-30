@@ -14,15 +14,15 @@ namespace PrsCapstone.Models {
         [StringLength(30)]
         [Required]
         public string LastName { get; set;}
-        [StringLength(30)]
+        [StringLength(32)]
         [Required]
         public string Username { get; set;}
-        [StringLength(30)]
+        [StringLength(32)]
         [Required]
         public string Password { get; set;}
-        [StringLength(12)]
+        [StringLength(10)]
         public string Phone { get; set;}
-        [StringLength(255)]
+        [StringLength(100)]
         public string Email { get; set;}
         public bool IsReviewer { get; set; } = false;
         public bool IsAdmin { get; set; } = false;

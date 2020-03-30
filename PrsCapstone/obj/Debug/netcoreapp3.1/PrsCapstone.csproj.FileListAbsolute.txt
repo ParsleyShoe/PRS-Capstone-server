@@ -289,3 +289,5 @@ C:\repos\PrsCapstone\PrsCapstone\obj\Debug\netcoreapp3.1\PrsCapstone.pdb
 C:\repos\PrsCapstone\PrsCapstone\obj\Debug\netcoreapp3.1\PrsCapstone.csprojAssemblyReference.cache
 C:\repos\PrsCapstone\PrsCapstone\bin\Debug\netcoreapp3.1\DataAnnotationsExtensions.dll
 C:\repos\PrsCapstone\PrsCapstone\obj\Debug\netcoreapp3.1\PrsCapstone.MvcApplicationPartsAssemblyInfo.cache
+C:\repos\PrsCapstone\PrsCapstone\obj\Debug\netcoreapp3.1\PrsCapstone.csproj.CoreCompileInputs.cache
+C:\repos\PrsCapstone\PrsCapstone\obj\Debug\netcoreapp3.1\PrsCapstone.genruntimeconfig.cache
