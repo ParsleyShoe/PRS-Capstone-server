@@ -22,12 +22,17 @@ namespace PrsCapstone.Controllers {
             return await _context.Users.SingleOrDefaultAsync(u => u.Username == username && u.Password == password);
         }
 
-        [HttpGet("recoverpassword_e/{username}/{email}")]
-        public async Task<bool> RecoverPasswordWithEmail(string username, string email) {
-            if (await _context.Users.SingleOrDefaultAsync(u => u.Username == username && u.Email == email) == null) {
+        [HttpGet("userverify/{username}/{answer}")]
+        public async Task<bool> VerifyUser(string username, string answer) {
+            if (await _context.Users.SingleOrDefaultAsync(u => u.Username == username && u.SecurityAnswer == answer) == null) {
                 return false;
             }
             return true;
+        }
+
+        [HttpGet("recoverpassword_e/{username}/{email}")]
+        public async Task<ActionResult<User>> RecoverPasswordWithEmail(string username, string email) {
+            return await _context.Users.SingleOrDefaultAsync(u => u.Username == username && u.Email == email);
         }
         [HttpGet("recoverpassword_p/{username}/{phone}")]
         public async Task<bool> RecoverPasswordWithPhone(string username, string phone) {
@@ -37,7 +42,7 @@ namespace PrsCapstone.Controllers {
             return true;
         }
 
-        [HttpGet("resetpassword/{password}")]
+        [HttpPut("resetpassword/{password}")]
         public async Task<IActionResult> ResetPassword(string password, User user) {
             user.Password = password;
             return await PutUser(user.Id, user);

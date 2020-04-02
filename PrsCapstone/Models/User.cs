@@ -17,7 +17,7 @@ namespace PrsCapstone.Models {
         [StringLength(32)]
         [Required]
         public string Username { get; set;}
-        [StringLength(32)]
+        [StringLength(64)]
         [Required]
         public string Password { get; set;}
         [StringLength(10)]
@@ -26,6 +26,8 @@ namespace PrsCapstone.Models {
         public string Email { get; set;}
         public bool IsReviewer { get; set; } = false;
         public bool IsAdmin { get; set; } = false;
+        [StringLength(30)]
+        public string SecurityAnswer { get; set; }
 
     }
 }

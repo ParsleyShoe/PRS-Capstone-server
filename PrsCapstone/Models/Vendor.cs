@@ -14,10 +14,10 @@ namespace PrsCapstone.Models {
         [StringLength(30)]
         [Required]
         public string Name { get; set; }
-        [StringLength(30)]
+        [StringLength(80)]
         [Required]
         public string Address { get; set; }
-        [StringLength(30)]
+        [StringLength(40)]
         [Required]
         public string City { get; set; }
         [StringLength(2)]
